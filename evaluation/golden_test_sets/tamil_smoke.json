@@ -1,0 +1,85 @@
+{
+  "name": "tamil_smoke",
+  "description": "10 Tamil test utterances for Sprint 1 baseline sanity check. Short, diverse, covers core categories. The full 300-utterance golden set is composed in Sprint 2.",
+  "language": "tamil",
+  "language_code": "ta",
+  "utterances": [
+    {
+      "id": "ta_smoke_01",
+      "category": "declarative_simple",
+      "text": "இன்று நான் நலமாக இருக்கிறேன்.",
+      "transliteration": "iṉṟu nāṉ nalamāka irukkiṟēṉ.",
+      "english_gloss": "I am well today."
+    },
+    {
+      "id": "ta_smoke_02",
+      "category": "question",
+      "text": "நீங்கள் எங்கிருந்து வருகிறீர்கள்?",
+      "transliteration": "nīṅkaḷ eṅkiruntu varukiṟīrkaḷ?",
+      "english_gloss": "Where are you coming from?"
+    },
+    {
+      "id": "ta_smoke_03",
+      "category": "emotional_exclamation",
+      "text": "அடடா! இந்த மாலைப் பொழுது எவ்வளவு அழகாக இருக்கிறது!",
+      "transliteration": "aṭaṭā! inta mālaip poḻutu evvaḷavu aḻakāka irukkiṟatu!",
+      "english_gloss": "Wow! How beautiful this evening is!"
+    },
+    {
+      "id": "ta_smoke_04",
+      "category": "long_agglutinative",
+      "text": "பல்கலைக்கழகத்தில் படித்துக்கொண்டிருந்தபோது நான் நிறைய விஷயங்களைக் கற்றுக்கொண்டேன்.",
+      "transliteration": "palkalaikkaḻakattil paṭittukkoṇṭiruntapōtu nāṉ niṟaiya viṣayaṅkaḷaik kaṟṟukkoṇṭēṉ.",
+      "english_gloss": "When I was studying at the university, I learned many things.",
+      "notes": "paṭittu-k-koṇṭu-irunta-pōtu decomposes as verb-root (paṭi 'study') + perfective participle (-ttu) + reflexive/continuous auxiliary (koḷ → koṇṭu) + past of iru 'be' (irunta) + temporal nominalizer (-pōtu 'when'). kaṟṟu-k-koṇṭēṉ adds reflexive aux + 1sg past. Stresses deep agglutination and gemination."
+    },
+    {
+      "id": "ta_smoke_05",
+      "category": "code_mixed",
+      "text": "எங்கள் CEO இந்த quarter-க்கு ஒரு நல்ல presentation கொடுத்தார்.",
+      "transliteration": "eṅkaḷ CEO inta quarter-kku oru nalla presentation koṭuttār.",
+      "english_gloss": "Our CEO gave a good presentation this quarter.",
+      "notes": "English nouns (CEO, quarter, presentation) inserted into Tamil frame with the dative clitic -க்கு attached directly to the English word — tests script-switching and affixation on foreign stems."
+    },
+    {
+      "id": "ta_smoke_06",
+      "category": "numbers_entities",
+      "text": "சென்னையில் ஜனவரி 26, 2026 அன்று ஒரு பெரிய நிகழ்ச்சி நடைபெறுகிறது.",
+      "transliteration": "ceṉṉaiyil jaṉavari 26, 2026 aṉṟu oru periya nikaḻcci naṭaipeṟukiṟatu.",
+      "english_gloss": "A big event is being held in Chennai on January 26, 2026.",
+      "notes": "Named place (Chennai) with locative -இல், Arabic digits embedded in Tamil, date particle அன்று, and the uniquely Tamil phoneme ழ in நிகழ்ச்சி."
+    },
+    {
+      "id": "ta_smoke_07",
+      "category": "formal_register",
+      "text": "மாண்புமிகு விருந்தினர்களுக்கு எமது இதயபூர்வமான வரவேற்பினைத் தெரிவித்துக்கொள்கிறோம்.",
+      "transliteration": "māṇpumiku viruntiṉarkaḷukku ematu itayapūrvamāṉa varavēṟpiṉait terivittukkoḷkiṟōm.",
+      "english_gloss": "We extend our heartfelt welcome to the honourable guests.",
+      "notes": "செந்தமிழ் register: honorific மாண்புமிகு, literary 1pl possessive எமது, Sanskritic இதயபூர்வமான, and the formal reflexive-present தெரிவித்துக்கொள்கிறோம்."
+    },
+    {
+      "id": "ta_smoke_08",
+      "category": "colloquial",
+      "text": "மச்சான், நாளைக்கு சினிமாவுக்கு போகலாமா?",
+      "transliteration": "maccāṉ, nāḷaikku ciṉimāvukku pōkalāmā?",
+      "english_gloss": "Dude, shall we go to the movies tomorrow?",
+      "notes": "Spoken Tamil: vocative மச்சான், reduced form போகலாமா (vs. literary செல்லலாமா), colloquial dative நாளைக்கு."
+    },
+    {
+      "id": "ta_smoke_09",
+      "category": "phonetically_tricky",
+      "text": "ஶ்ரீ க்ஷத்ரியன் ஞானத்தையும் தமிழ்மொழியின் வழக்கத்தையும் பேணுகிறான்.",
+      "transliteration": "śrī kṣatriyaṉ ñāṉattaiyum tamiḻmoḻiyiṉ vaḻakkattaiyum pēṇukiṟāṉ.",
+      "english_gloss": "Sri Kshatriyan preserves knowledge and the customs of the Tamil language.",
+      "notes": "Phones tested: conjuncts ஶ்ரீ (śrī), க்ஷ (kṣ), ஜ்ஞ/ஞ (ñ); retroflex ண (ṇ), ள (ḷ), and the uniquely Tamil retroflex approximant ழ (ḻ) appearing twice in தமிழ்மொழி and வழக்கம்; dental-retroflex contrast ன/ண."
+    },
+    {
+      "id": "ta_smoke_10",
+      "category": "long_narrative",
+      "text": "எங்கள் தாத்தா தினமும் மாலையில் திண்ணையில் அமர்ந்துகொண்டு, தன் சிறுவயதில் நடந்த கதைகளைச் சொல்லிக்கொண்டிருப்பார், நாங்கள் அனைவரும் சேர்ந்து ஆர்வமாகக் கேட்போம்.",
+      "transliteration": "eṅkaḷ tāttā tiṉamum mālaiyil tiṇṇaiyil amarntukoṇṭu, taṉ ciṟuvayatil naṭanta kataikaḷaic collikkoṇṭiruppār, nāṅkaḷ aṉaivarum cērntu ārvamākak kēṭpōm.",
+      "english_gloss": "Every evening our grandfather sits on the thinnai (porch) and keeps telling stories from his childhood, and all of us listen together with interest.",
+      "notes": "~32 syllables, three clauses with a participial chain (amarntukoṇṭu … collikkoṇṭiruppār … kēṭpōm) — stresses prosody, breath groups, and long-form coherence."
+    }
+  ]
+}

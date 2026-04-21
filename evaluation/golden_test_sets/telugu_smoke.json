@@ -1,0 +1,83 @@
+{
+  "name": "telugu_smoke",
+  "description": "10 Telugu test utterances for Sprint 1 baseline sanity check. Short, diverse, covers core categories. The full 300-utterance golden set is composed in Sprint 2.",
+  "language": "telugu",
+  "language_code": "te",
+  "utterances": [
+    {
+      "id": "te_smoke_01",
+      "category": "declarative_simple",
+      "text": "నేను ఇవాళ బాగున్నాను.",
+      "transliteration": "nenu ivala bagunnanu.",
+      "english_gloss": "I am well today."
+    },
+    {
+      "id": "te_smoke_02",
+      "category": "question",
+      "text": "మీరు ఎక్కడ నుంచి వస్తున్నారు?",
+      "transliteration": "miiru ekkaDa nunchi vastunnaaru?",
+      "english_gloss": "Where are you coming from?"
+    },
+    {
+      "id": "te_smoke_03",
+      "category": "emotional_exclamation",
+      "text": "అబ్బా! ఎంత అందంగా ఉందో ఈ సాయంత్రం!",
+      "transliteration": "abbaa! entha andangaa undhoo ii saayantram!",
+      "english_gloss": "Wow! How beautiful this evening is!"
+    },
+    {
+      "id": "te_smoke_04",
+      "category": "long_agglutinative",
+      "text": "విశ్వవిద్యాలయంలో చదువుకుంటున్నప్పుడు నేను చాలా విషయాలు నేర్చుకున్నాను.",
+      "transliteration": "vishwavidyaalayamloo chaduvukunTunnappudu nenu chaalaa vishayaalu nerchukunnanu.",
+      "english_gloss": "When I was studying at the university, I learned many things.",
+      "notes": "Contains vishwavidyaalayamloo (university + locative) and chaduvukunTunnappudu (study + reflexive + continuous + temporal) — strong agglutination test."
+    },
+    {
+      "id": "te_smoke_05",
+      "category": "code_mixed",
+      "text": "మా CEO ఈ quarter కి మంచి presentation ఇచ్చారు.",
+      "transliteration": "maa CEO ii quarter ki manchi presentation ichchaaru.",
+      "english_gloss": "Our CEO gave a good presentation this quarter.",
+      "notes": "English terms (CEO, quarter, presentation) mid-sentence — tests code-switching and script-mixing."
+    },
+    {
+      "id": "te_smoke_06",
+      "category": "numbers_entities",
+      "text": "హైదరాబాద్‌లో జనవరి 26, 2026న పెద్ద కార్యక్రమం జరుగుతోంది.",
+      "transliteration": "hyderabad-loo janavari 26, 2026-na pedda kaaryakramam jarugutoondi.",
+      "english_gloss": "A big event is happening in Hyderabad on January 26, 2026.",
+      "notes": "Mixed native and English digits, named entity (Hyderabad)."
+    },
+    {
+      "id": "te_smoke_07",
+      "category": "formal_register",
+      "text": "గౌరవనీయులైన అతిథులకు హృదయపూర్వక స్వాగతం తెలియజేస్తున్నాము.",
+      "transliteration": "gauravaniiyulaina atidhulaku hrudayapuurvaka swaagatam teliyajeestunnaamu.",
+      "english_gloss": "We extend a heartfelt welcome to our honourable guests."
+    },
+    {
+      "id": "te_smoke_08",
+      "category": "colloquial",
+      "text": "ఒరేయ్, రేపు సినిమాకి వెళ్దామా?",
+      "transliteration": "orey, reepu cinemaa-ki veLdaamaa?",
+      "english_gloss": "Hey, shall we go to the movies tomorrow?"
+    },
+    {
+      "id": "te_smoke_09",
+      "category": "phonetically_tricky",
+      "text": "క్షత్రియుడు సృష్టి జ్ఞానం సంప్రదాయాన్ని సంరక్షిస్తాడు.",
+      "transliteration": "kshatriyuDu sRShTi jnaanam sampradaayaanni samrakshistaaDu.",
+      "english_gloss": "A Kshatriya preserves the tradition of cosmic knowledge.",
+      "notes": "Conjunct-heavy: క్ష, సృ, జ్ఞ, ర్ర, ంప్ర — stresses the phoneme inventory."
+    },
+    {
+      "id": "te_smoke_10",
+      "category": "long_narrative",
+      "text": "మా తాతయ్య ప్రతి సాయంత్రం వరండాలో కూర్చుని, తన చిన్నతనంలో జరిగిన కథలు చెప్తూ ఉంటారు, మరియు మేము అందరూ కలిసి ఆసక్తిగా వినేవాళ్లం.",
+      "transliteration": "maa taatayya prati saayantram varandaaloo kuurchuni, thana chinnathanamloo jarigina kathalu cheptuu unTaaru, mariyu meemu andaruu kalisi aasaktigaa vinevaaLLam.",
+      "english_gloss": "Every evening our grandfather sits on the verandah and tells stories from his childhood, and all of us listen together with interest.",
+      "notes": "~30 syllables, multiple clauses — tests prosody, breath control, long-form coherence."
+    }
+  ]
+}

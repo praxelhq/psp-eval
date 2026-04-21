@@ -1,0 +1,515 @@
+{
+  "version": "v1-preliminary-2026-04-21",
+  "notes": "PSP v1 benchmark smoke sets. Caveats: 10-utt smoke only; per-phoneme probes have noise floor (see native_sanity); FAD/PSD are unnormalised Fr\u00e9chet; nPVI uses librosa onset_detect.",
+  "benchmarks": {
+    "Hindi": [
+      {
+        "system": "Sarvam",
+        "run_id": "sarvam_hindi_smoke_1776708724",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 22,
+          "rr_n_collapsed": 0,
+          "rr_collapse_rate": 0.0,
+          "af_n_expected": 18,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": 0.0,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 211.78508125859435,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 10.754851264580148,
+          "trace_term": 96.11825553535311,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 108.4530918282588,
+          "n_gen": 20,
+          "n_ref": 497,
+          "mean_norm": 7.5986718709751315,
+          "trace_term": 50.7132776255101,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "ElevenLabs",
+        "run_id": "elevenlabs_hindi_smoke_1776705669",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 22,
+          "rr_n_collapsed": 0,
+          "rr_collapse_rate": 0.0,
+          "af_n_expected": 18,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": 0.0,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 227.44979445554245,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 11.469377250464147,
+          "trace_term": 95.90317994207794,
+          "embedding_dim": 1024
+        },
+        "psd": null
+      },
+      {
+        "system": "Cartesia",
+        "run_id": "cartesia_hindi_smoke_1776705609",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 22,
+          "rr_n_collapsed": 0,
+          "rr_collapse_rate": 0.0,
+          "af_n_expected": 18,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": 0.0,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 267.37447784310774,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 12.231121642252962,
+          "trace_term": 117.77414121551897,
+          "embedding_dim": 1024
+        },
+        "psd": null
+      },
+      {
+        "system": "Indic Parler",
+        "run_id": "indic_parler_hindi_smoke_1776702501",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 22,
+          "rr_n_collapsed": 1,
+          "rr_collapse_rate": 0.045454545454545456,
+          "af_n_expected": 18,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": 0.0,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 248.43505411741586,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 11.750057165496555,
+          "trace_term": 110.37121072497894,
+          "embedding_dim": 1024
+        },
+        "psd": null
+      }
+    ],
+    "Telugu": [
+      {
+        "system": "Sarvam",
+        "run_id": "sarvam_telugu_smoke_1776708680",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 30,
+          "rr_n_collapsed": 10,
+          "rr_collapse_rate": 0.3333333333333333,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 250.4178964138944,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 12.375825078676145,
+          "trace_term": 97.25685003590496,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 11.058842376388128,
+          "n_gen": 20,
+          "n_ref": 498,
+          "mean_norm": 2.703803207710822,
+          "trace_term": 3.7482905903607957,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "ElevenLabs",
+        "run_id": "elevenlabs_telugu_smoke_1776706139",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 30,
+          "rr_n_collapsed": 12,
+          "rr_collapse_rate": 0.4,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 328.93470582504995,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 14.655898599137036,
+          "trace_term": 114.13934207686304,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 154.38076283819208,
+          "n_gen": 20,
+          "n_ref": 498,
+          "mean_norm": 10.638757471789047,
+          "trace_term": 41.19760229464481,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "Cartesia",
+        "run_id": "cartesia_telugu_smoke_1776706036",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 30,
+          "rr_n_collapsed": 15,
+          "rr_collapse_rate": 0.5,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 458.137997643419,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 18.574264172766224,
+          "trace_term": 113.13470808371213,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 33.825621425838676,
+          "n_gen": 20,
+          "n_ref": 498,
+          "mean_norm": 5.638119952575045,
+          "trace_term": 2.037224826213844,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "Indic Parler",
+        "run_id": "indic_parler_telugu_smoke_1776699982",
+        "psp": {
+          "n_utts": 19,
+          "rr_n_expected": 27,
+          "rr_n_collapsed": 9,
+          "rr_collapse_rate": 0.3333333333333333,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 324.96118583728617,
+          "n_gen": 19,
+          "n_ref": 1000,
+          "mean_norm": 14.212541086413964,
+          "trace_term": 122.96486170428119,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 10.388068758097333,
+          "n_gen": 19,
+          "n_ref": 498,
+          "mean_norm": 1.768019793386259,
+          "trace_term": 7.262174768291743,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "Praxy R5",
+        "run_id": "praxy_r5_s4000_telugu_smoke_1776769839",
+        "psp": {
+          "n_utts": 10,
+          "rr_n_expected": 15,
+          "rr_n_collapsed": 6,
+          "rr_collapse_rate": 0.4,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 534.3992985211992,
+          "n_gen": 10,
+          "n_ref": 1000,
+          "mean_norm": 17.15047486325779,
+          "trace_term": 240.26051048596182,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 14.059854113901608,
+          "n_gen": 10,
+          "n_ref": 498,
+          "mean_norm": 3.546625064721506,
+          "trace_term": 1.4813047641907815,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      }
+    ],
+    "Tamil": [
+      {
+        "system": "Sarvam",
+        "run_id": "sarvam_tamil_smoke_1776708765",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 78,
+          "rr_n_collapsed": 55,
+          "rr_collapse_rate": 0.7051282051282052,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 14,
+          "zf_n_collapsed": 12,
+          "zf_collapse_rate": 0.8571428571428571,
+          "lf_mean": 0.13075782272004868
+        },
+        "fad": {
+          "fad": 200.34307686485573,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 10.257693740311193,
+          "trace_term": 95.12279599483628,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 72.29671045309664,
+          "n_gen": 20,
+          "n_ref": 500,
+          "mean_norm": 8.184300081165215,
+          "trace_term": 5.313942634535692,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "ElevenLabs",
+        "run_id": "elevenlabs_tamil_smoke_1776706185",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 78,
+          "rr_n_collapsed": 54,
+          "rr_collapse_rate": 0.6923076923076923,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 14,
+          "zf_n_collapsed": 12,
+          "zf_collapse_rate": 0.8571428571428571,
+          "lf_mean": 0.2346406587108965
+        },
+        "fad": {
+          "fad": 239.40835863610266,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 11.4496085174519,
+          "trace_term": 108.31482343319556,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 253.64824734621854,
+          "n_gen": 20,
+          "n_ref": 500,
+          "mean_norm": 14.936362221098975,
+          "trace_term": 30.553330946345852,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "Cartesia",
+        "run_id": "cartesia_tamil_smoke_1776706062",
+        "psp": {
+          "n_utts": 20,
+          "rr_n_expected": 78,
+          "rr_n_collapsed": 54,
+          "rr_collapse_rate": 0.6923076923076923,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 14,
+          "zf_n_collapsed": 12,
+          "zf_collapse_rate": 0.8571428571428571,
+          "lf_mean": 0.2899060921417679
+        },
+        "fad": {
+          "fad": 404.28932105870103,
+          "n_gen": 20,
+          "n_ref": 1000,
+          "mean_norm": 17.21950138031452,
+          "trace_term": 107.77809327204736,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 180.9658933566675,
+          "n_gen": 20,
+          "n_ref": 500,
+          "mean_norm": 10.673037505601771,
+          "trace_term": 67.0521637606854,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      },
+      {
+        "system": "Indic Parler",
+        "run_id": "indic_parler_tamil_smoke_1776702735",
+        "psp": {
+          "n_utts": 19,
+          "rr_n_expected": 70,
+          "rr_n_collapsed": 45,
+          "rr_collapse_rate": 0.6428571428571429,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 13,
+          "zf_n_collapsed": 8,
+          "zf_collapse_rate": 0.6153846153846154,
+          "lf_mean": 0.3047723046074655
+        },
+        "fad": {
+          "fad": 233.09424488419327,
+          "n_gen": 19,
+          "n_ref": 1000,
+          "mean_norm": 11.328041842879294,
+          "trace_term": 104.76971289016916,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 27.066489338631868,
+          "n_gen": 19,
+          "n_ref": 500,
+          "mean_norm": 5.066754365806365,
+          "trace_term": 1.3944895352140065,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        }
+      }
+    ]
+  },
+  "native_sanity": {
+    "te": {
+      "language": "te",
+      "n_clips_scored": 50,
+      "retroflex_fidelity_mean": 0.5381929670676975,
+      "retroflex_collapse_rate": 0.4298642533936652,
+      "retroflex_n_expected": 221,
+      "retroflex_n_collapsed": 95,
+      "aspiration_fidelity_mean": 0.7884938176873334,
+      "aspiration_collapse_rate": 0.2631578947368421,
+      "aspiration_n_expected": 57,
+      "aspiration_n_collapsed": 15,
+      "length_fidelity_mean": 0.23922036026417295,
+      "zha_fidelity_mean": null,
+      "zha_collapse_rate": null,
+      "zha_n_expected": 0,
+      "fad": 34.797300205613666,
+      "fad_mean_norm": 1.6784056965198657,
+      "fad_trace_term": 31.980254523503334,
+      "psd": 4.984875348245255,
+      "psd_mean_norm": 2.185696928560599
+    },
+    "hi": {
+      "language": "hi",
+      "n_clips_scored": 50,
+      "retroflex_fidelity_mean": 1.0,
+      "retroflex_collapse_rate": 0.0,
+      "retroflex_n_expected": 103,
+      "retroflex_n_collapsed": 0,
+      "aspiration_fidelity_mean": 1.0,
+      "aspiration_collapse_rate": 0.0,
+      "aspiration_n_expected": 103,
+      "aspiration_n_collapsed": 0,
+      "length_fidelity_mean": 0.3708494186972448,
+      "zha_fidelity_mean": null,
+      "zha_collapse_rate": null,
+      "zha_n_expected": 0,
+      "fad": 43.45411913819434,
+      "fad_mean_norm": 1.692548368729826,
+      "fad_trace_term": 40.58939915770435,
+      "psd": 2.1316744680287396,
+      "psd_mean_norm": 0.9570577451325951
+    },
+    "ta": {
+      "language": "ta",
+      "n_clips_scored": 50,
+      "retroflex_fidelity_mean": 0.4700572448737715,
+      "retroflex_collapse_rate": 0.8607888631090487,
+      "retroflex_n_expected": 431,
+      "retroflex_n_collapsed": 371,
+      "aspiration_fidelity_mean": null,
+      "aspiration_collapse_rate": null,
+      "aspiration_n_expected": 0,
+      "aspiration_n_collapsed": 0,
+      "length_fidelity_mean": 0.13421705099540263,
+      "zha_fidelity_mean": 0.45434493262312986,
+      "zha_collapse_rate": 0.8888888888888888,
+      "zha_n_expected": 18,
+      "fad": 31.92160884149887,
+      "fad_mean_norm": 1.464495961124931,
+      "fad_trace_term": 29.776860421347635,
+      "psd": 5.566715325207308,
+      "psd_mean_norm": 2.192242106232604
+    }
+  }
+}

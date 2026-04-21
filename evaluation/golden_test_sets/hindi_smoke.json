@@ -1,0 +1,83 @@
+{
+  "name": "hindi_smoke",
+  "description": "10 Hindi test utterances for Sprint 1 baseline sanity check. Short, diverse, covers core categories. The full 300-utterance golden set is composed in Sprint 2.",
+  "language": "hindi",
+  "language_code": "hi",
+  "utterances": [
+    {
+      "id": "hi_smoke_01",
+      "category": "declarative_simple",
+      "text": "मैं आज ठीक हूँ।",
+      "transliteration": "maiṁ āj ṭhīk hūṁ.",
+      "english_gloss": "I am fine today."
+    },
+    {
+      "id": "hi_smoke_02",
+      "category": "question",
+      "text": "आप कहाँ से आ रहे हैं?",
+      "transliteration": "āp kahāṁ se ā rahe haiṁ?",
+      "english_gloss": "Where are you coming from?"
+    },
+    {
+      "id": "hi_smoke_03",
+      "category": "emotional_exclamation",
+      "text": "वाह! कितनी सुंदर है यह शाम!",
+      "transliteration": "vāh! kitnī sundar hai yah śām!",
+      "english_gloss": "Wow! How beautiful this evening is!"
+    },
+    {
+      "id": "hi_smoke_04",
+      "category": "long_agglutinative",
+      "text": "विश्वविद्यालय में पढ़ाई करते समय मुझे अपने सहपाठियों के साथ बहुत सी बातें सीखने को मिलीं।",
+      "transliteration": "viśvavidyālay meṁ paṛhāī karte samay mujhe apne sahapāṭhiyoṁ ke sāth bahut sī bāteṁ sīkhne ko milīṁ.",
+      "english_gloss": "While studying at the university, I got to learn many things together with my classmates.",
+      "notes": "Sanskritic compound 'viśvavidyālay' (viśva+vidyā+ālay), compound verb 'sīkhne ko milīṁ', temporal postposition phrase 'karte samay', and the plural oblique 'sahapāṭhiyoṁ ke sāth' — stresses long-form morphology and postposition stacking."
+    },
+    {
+      "id": "hi_smoke_05",
+      "category": "code_mixed",
+      "text": "हमारे CEO ने इस quarter में एक बढ़िया presentation दिया।",
+      "transliteration": "hamāre CEO ne is quarter meṁ ek baṛhiyā presentation diyā.",
+      "english_gloss": "Our CEO gave a great presentation this quarter.",
+      "notes": "English terms (CEO, quarter, presentation) embedded mid-sentence — tests Latin-script code-switching within Devanagari."
+    },
+    {
+      "id": "hi_smoke_06",
+      "category": "numbers_entities",
+      "text": "दिल्ली में २६ जनवरी, 2026 को एक बड़ा कार्यक्रम हो रहा है।",
+      "transliteration": "dillī meṁ 26 janavarī, 2026 ko ek baṛā kāryakram ho rahā hai.",
+      "english_gloss": "A big event is happening in Delhi on 26 January, 2026.",
+      "notes": "Mixes Devanagari digits (२६) with Arabic digits (2026), plus named entity (Delhi) and a date expression."
+    },
+    {
+      "id": "hi_smoke_07",
+      "category": "formal_register",
+      "text": "आदरणीय अतिथियों का हम हार्दिक स्वागत करते हैं।",
+      "transliteration": "ādaraṇīya atithiyoṁ kā ham hārdik svāgat karte haiṁ.",
+      "english_gloss": "We extend a heartfelt welcome to our honourable guests."
+    },
+    {
+      "id": "hi_smoke_08",
+      "category": "colloquial",
+      "text": "यार, कल मूवी चलें क्या?",
+      "transliteration": "yār, kal mūvī caleṁ kyā?",
+      "english_gloss": "Dude, shall we go for a movie tomorrow?"
+    },
+    {
+      "id": "hi_smoke_09",
+      "category": "phonetically_tricky",
+      "text": "क्षत्रिय ऋषि के यज्ञ में त्रिकोण और ज्ञान की चर्चा हुई।",
+      "transliteration": "kṣatriya r̥ṣi ke yajña meṁ trikoṇ aur jñān kī carcā huī.",
+      "english_gloss": "At the Kshatriya sage's yajna, there was a discussion of the triangle and of knowledge.",
+      "notes": "Dense conjuncts and retroflexes: क्ष (kṣ), त्र (tr), ज्ञ (jñ), ऋ (r̥), ण (ṇ), ष (ṣ), ञ — stresses the Sanskritic phoneme inventory."
+    },
+    {
+      "id": "hi_smoke_10",
+      "category": "long_narrative",
+      "text": "मेरे दादाजी हर शाम बरामदे में बैठकर अपने बचपन की कहानियाँ सुनाते हैं, और हम सब मिलकर बड़े चाव से उनकी बातें सुनते हैं।",
+      "transliteration": "mere dādājī har śām barāmde meṁ baiṭhkar apne bacpan kī kahāniyāṁ sunāte haiṁ, aur ham sab milkar baṛe cāv se unkī bāteṁ sunte haiṁ.",
+      "english_gloss": "Every evening my grandfather sits on the verandah and tells stories from his childhood, and all of us together listen to him eagerly.",
+      "notes": "~32 syllables across two clauses joined by 'aur' — tests prosody, breath control, and long-form coherence."
+    }
+  ]
+}
