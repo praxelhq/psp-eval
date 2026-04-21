@@ -117,4 +117,4 @@ CC-BY-4.0 — matching the originating corpus licenses (IndicTTS, Rasa).
 
 ## Contact
 
-Pushpak Teja — pushpak@praxel.ai — [praxel.ai](https://praxel.ai)
+Pushpak Teja — pushpak@praxel.in — [praxel.in](https://praxel.in)

@@ -1,14 +1,14 @@
 # psp-eval
 
-**PSP: An interpretable per-dimension accent benchmark for Indic text-to-speech.**
+Reference implementation and benchmark for **PSP: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech** (Teja, 2026).
 
 [![Paper](https://img.shields.io/badge/paper-arXiv-b31b1b.svg)](https://arxiv.org/abs/TBD)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Centroids: CC-BY](https://img.shields.io/badge/centroids-CC--BY--4.0-green.svg)](https://huggingface.co/datasets/Praxel/psp-native-centroids)
 
-Standard TTS evaluation measures **intelligibility** (WER, CER) and **overall naturalness** (MOS, UTMOS) but does not quantify **accent**. A synthesiser may score well on all four yet sound non-native on features that are phonemic in the target language.
+Standard text-to-speech evaluation measures intelligibility (WER, CER) and overall naturalness (MOS, UTMOS) but does not quantify accent. A synthesiser may score well on all four and still sound non-native on features that are phonemic in the target language.
 
-**PSP** (Phoneme Substitution Profile) decomposes accent into six interpretable dimensions:
+PSP (Phoneme Substitution Profile) decomposes accent into six interpretable dimensions:
 
 | # | Metric | What it captures | Native = |
 |---|---|---|---|
@@ -48,19 +48,19 @@ Each `.wav` in the directory is scored against its expected transcript. Transcri
 
 `te` (Telugu), `hi` (Hindi), `ta` (Tamil). Extension to Kannada / Malayalam / Bengali / Gujarati / Punjabi planned for v2.
 
-## Preliminary benchmark (v1, pilot sets)
+## Preliminary results (v1, pilot sets)
 
-A selection from the released `paper/benchmark_results.json`:
+Selected Telugu results from `paper/benchmark_results.json`:
 
-| System | Retroflex collapse (Te) | FAD (Te) | PSD (Te) |
+| System | RR collapse | FAD | PSD |
 |---|---|---|---|
-| Sarvam Bulbul | **33.3%** | **250** | 11.1 |
-| Indic Parler-TTS | **33.3%** | 325 | **10.4** |
-| Praxy R5 (ours) | 40.0% | 534 | 14.1 |
+| Sarvam Bulbul | 33.3% | 250 | 11.1 |
+| Indic Parler-TTS | 33.3% | 325 | 10.4 |
+| Praxy Voice R5 (ours, in progress) | 40.0% | 534 | 14.1 |
 | ElevenLabs v3 | 40.0% | 329 | 154.4 |
 | Cartesia Sonic-3 | 50.0% | 458 | 33.8 |
 
-Key finding: **PSP ordering diverges from WER ordering.** Commercial WER-leaders do not uniformly lead on retroflex or prosodic fidelity. See the paper for Hindi / Tamil tables + analysis.
+The principal observation is that PSP ordering is not monotonic with WER ordering: systems that lead on intelligibility do not uniformly lead on retroflex or prosodic fidelity. See the paper for full Hindi / Tamil tables and cross-language analysis.
 
 ## Repository structure
 
@@ -142,11 +142,11 @@ If you use PSP in your research, please cite:
 }
 ```
 
-## Honest caveats (v1)
+## Limitations (v1)
 
-- **Smoke-set scale**: v1 benchmarks use 10-utterance pilot sets per (system, language). Full 300-utterance benchmarks land in v2.
-- **Noise floor on per-phoneme probes for Telugu/Tamil**: on native audio, Telugu retroflex fidelity registers 0.54 (not 1.0); Tamil 0.47. Hindi registers 1.00 (perfect). Likely driven by aligner quality variance. FAD and PSD do not share this noise floor. Treat per-phoneme scores as **relative rankings across systems**, not absolute distances from a 1.0 ceiling. See paper §6 for details.
-- **MOS correlation**: formal human-perception calibration is deferred to v2. v1 reports five internal-consistency signals supporting metric validity.
+- **Pilot-scale benchmarks.** v1 reports numbers on 10-utterance pilot sets per (system, language). Full benchmarks on the 300-utterance golden sets released with this repository appear in v2.
+- **Per-phoneme probe noise floor on Telugu and Tamil.** Held-out native audio registers retroflex fidelity of 0.54 on Telugu and 0.47 on Tamil (not 1.0); Hindi native audio registers 1.00. The discrepancy is consistent with language-specific CTC aligner quality: our Hindi aligner (AI4Bharat) is trained on substantially larger and cleaner data than the community Telugu and Tamil aligners. Per-phoneme scores should be interpreted as relative rankings across systems evaluated on the same test set, not as absolute distances from a theoretical 1.0 ceiling. FAD and PSD are not affected and remain absolute-interpretable. See paper §6.
+- **MOS correlation deferred to v2.** v1 supplies five internal-consistency signals supporting metric validity. Formal human-perception calibration is a v2 deliverable.
 
 ## Related work
 
@@ -162,8 +162,8 @@ If you use PSP in your research, please cite:
 
 ## Acknowledgments
 
-PSP v1 was developed independently without external API credit grants. Thanks to Aakanksha Naik for arXiv endorsement; thanks to the IndicTTS, Rasa, and FLEURS teams for the native-reference corpora this benchmark is built on.
+PSP v1 was developed independently without external API credit grants. Native reference data is derived from the IndicTTS, Rasa, and FLEURS speech corpora, used under their respective licenses.
 
 ## Contact
 
-Pushpak Teja — pushpak@praxel.ai — [praxel.ai](https://praxel.ai)
+Pushpak Teja — pushpak@praxel.in

@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-  { name = "Pushpak Teja", email = "pushpak@praxel.ai" },
+  { name = "Pushpak Teja", email = "pushpak@praxel.in" },
 ]
 keywords = [
   "text-to-speech", "accent-evaluation", "indic", "retroflex",
