@@ -2,7 +2,7 @@
 
 **To**: research@karya.in (or contact form at https://karya.in)
 **Subject**: Research partnership for speech-TTS accent benchmark (Indic, Interspeech submission)
-**From**: Pushpak Teja, Praxel HQ (pushpak@praxel.ai)
+**From**: Pushpak Teja, Praxel HQ (pushpak@praxel.in)
 
 ---
 
@@ -40,9 +40,9 @@ I'm reaching out to explore a research partnership for a small-scale MOS (Mean O
 - Anonymized data export (CSV / JSON) post-study
 
 **Our background**
-- Praxel HQ (praxel.ai) is an early-stage Indian speech-AI company focused on open-source Indic TTS / STT
+- Praxel HQ (praxel.in) is an early-stage Indian speech-AI company focused on open-source Indic TTS / STT
 - GitHub: github.com/praxelhq/praxy-tts (private for now; public on ArXiv upload)
-- Founder: Pushpak Teja (ex-Groww, Masters' Union); reachable at pushpak@praxel.ai
+- Founder: Pushpak Teja (ex-Groww, Masters' Union); reachable at pushpak@praxel.in
 
 Could we schedule a 20-minute call this week to see if Karya would be a fit for this partnership? Happy to share the study protocol draft + the audio samples we'd use.
 

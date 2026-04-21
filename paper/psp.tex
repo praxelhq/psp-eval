@@ -36,7 +36,8 @@
 \author{
   \IEEEauthorblockN{Pushpak Teja}
   \IEEEauthorblockA{Praxel HQ\\
-  \texttt{pushpak@praxel.ai}}
+  \texttt{pushpak@praxel.in}\\
+  ORCID: \href{https://orcid.org/0009-0003-2479-9208}{0009-0003-2479-9208}}
 }
 
 \maketitle
@@ -115,7 +116,7 @@ Per language, we sample $N{=}500$ native clips from IndicTTS (Telugu, Tamil) and
 Given (audio, text, language), we run \texttt{forced\_align}~\cite{torchaudio} over the CTC emission against the grapheme sequence, extract layer-9 XLS-R embeddings for each expected-retroflex span, and compute per-position fidelity. Utterance-level \psp{}-RR is the mean over positions. Corpus-level is the mean over utterances weighted by expected retroflex count.
 
 \subsection{Released artifacts}
-Code is open-source MIT at \url{github.com/praxelhq/praxy-tts} (\texttt{evaluation/psp.py}, \texttt{evaluation/psp\_bootstrap.py}, \texttt{evaluation/modal\_psp.py}). Centroids are CC-BY. A submission pipeline and leaderboard run at \url{praxel.ai/psp-leaderboard}.
+Code is open-source MIT at \url{github.com/praxelhq/praxy-tts} (\texttt{evaluation/psp.py}, \texttt{evaluation/psp\_bootstrap.py}, \texttt{evaluation/modal\_psp.py}). Centroids are CC-BY. A submission pipeline and leaderboard run at \url{praxel.in/psp-leaderboard}.
 
 \section{Calibration}
 \label{sec:calibration}
