@@ -1,0 +1,165 @@
+% Bibliography for PSP paper — entries ordered by topic, not alphabetically,
+% for ease of review while drafting.
+
+% --- Wav2Vec2 / XLS-R ---
+@article{babu2021xlsr,
+  title={{XLS-R}: Self-supervised cross-lingual speech representation learning at scale},
+  author={Babu, Arun and Wang, Changhan and Tjandra, Andros and Lakhotia, Kushal and Xu, Qiantong and Goyal, Naman and Singh, Kritika and von Platen, Patrick and Saraf, Yatharth and Pino, Juan and others},
+  journal={Interspeech},
+  year={2022}
+}
+
+% --- Phoneme Shift Rate (primary related work for differentiation) ---
+@inproceedings{psr2026,
+  title={Quantifying Speaker Embedding Phonological Rule Interactions in Accented Speech Synthesis},
+  author={Lertpetchpun, Thanathai and Lee, Yoonjeong and Trachu, Thanapat and Lee, Jihwan and Feng, Tiantian and Byrd, Dani and Narayanan, Shrikanth},
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year={2026},
+  note={arXiv:2601.14417}
+}
+
+% --- Learning-free L2 accent generation ---
+@article{l2accented2026,
+  title={Learning-free {L2}-Accented Speech Generation using Phonological Rules},
+  author={Anonymous},
+  journal={arXiv:2603.07550},
+  year={2026}
+}
+
+% --- Pairwise accent similarity ---
+@inproceedings{accent_pairwise2025,
+  title={Pairwise Evaluation of Accent Similarity in Speech Synthesis},
+  author={Anonymous},
+  booktitle={Interspeech},
+  year={2025},
+  note={arXiv:2505.14410}
+}
+
+% --- Rasmalai (Indic dataset) ---
+@inproceedings{ai4bharat2023rasa,
+  title={Rasmalai: {A} Large-Scale {Indic} Speech Dataset with Accent and Intonation Descriptions},
+  author={Sankar, and others},
+  booktitle={Interspeech},
+  year={2025}
+}
+
+% --- IndicTTS ---
+@inproceedings{kumar2022indictts,
+  title={Towards Building Text-to-Speech Systems for the Next Billion Users},
+  author={Kumar, Gokul and others},
+  booktitle={ICASSP},
+  year={2023}
+}
+
+% --- IndicVoices-R ---
+@inproceedings{indicvoicesr2024,
+  title={{IndicVoices-R}: A Speaker-Generalization {TTS} Benchmark for {Indic} Languages},
+  author={AI4Bharat},
+  booktitle={NeurIPS Datasets and Benchmarks},
+  year={2024}
+}
+
+% --- UTMOS ---
+@inproceedings{saeki2022utmos,
+  title={{UTMOS}: {UTokyo-SaruLab} System for {VoiceMOS} Challenge 2022},
+  author={Saeki, Takaaki and Xin, Detai and Nakata, Wataru and Koriyama, Tomoki and Takamichi, Shinnosuke and Saruwatari, Hiroshi},
+  booktitle={Interspeech},
+  year={2022}
+}
+
+% --- Frechet Audio Distance ---
+@inproceedings{kilgour2019fad,
+  title={Frechet Audio Distance: A Reference-Free Metric for Evaluating Music Enhancement Algorithms},
+  author={Kilgour, Kevin and Zuluaga, Mauricio and Roblek, Dominik and Sharifi, Matthew},
+  booktitle={Interspeech},
+  year={2019}
+}
+
+@article{fsd2026,
+  title={Understanding {Frechet} Speech Distance for {TTS} Evaluation},
+  author={Anonymous},
+  journal={arXiv:2601.21386},
+  year={2026}
+}
+
+% --- torchaudio forced_align ---
+@misc{torchaudio,
+  title={{torchaudio}: An Audio Library for {PyTorch}},
+  author={{PyTorch Team}},
+  howpublished={\url{https://pytorch.org/audio/stable/}},
+  year={2024}
+}
+
+% --- Baseline systems ---
+@misc{parler2024,
+  title={{Parler-TTS}: Open-Source Text-to-Speech},
+  author={Lacombe, Yoach and others},
+  howpublished={\url{https://github.com/huggingface/parler-tts}},
+  year={2024}
+}
+
+@misc{chatterbox2025,
+  title={{Chatterbox Multilingual TTS}},
+  author={{Resemble AI}},
+  howpublished={\url{https://github.com/resemble-ai/chatterbox}},
+  year={2025}
+}
+
+@misc{indicf5_2025,
+  title={{IndicF5}: {F5-TTS} for {Indic} Languages},
+  author={AI4Bharat},
+  howpublished={\url{https://huggingface.co/ai4bharat/IndicF5}},
+  year={2025}
+}
+
+% --- FLEURS multilingual speech corpus ---
+@inproceedings{conneau2022fleurs,
+  title={{FLEURS}: Few-shot Learning Evaluation of Universal Representations of Speech},
+  author={Conneau, Alexis and Ma, Min and Khanuja, Simran and Zhang, Yu and Axelrod, Vera and Dalmia, Siddharth and Riesa, Jason and Rivera, Clara and Bapna, Ankur},
+  booktitle={IEEE Spoken Language Technology Workshop (SLT)},
+  year={2022},
+  doi={10.1109/SLT54892.2023.10023141}
+}
+
+% --- IndicWav2Vec alignment model lineage ---
+@inproceedings{javed2022indicwav2vec,
+  title={Towards Building {ASR} Systems for the Next Billion Users},
+  author={Javed, Tahir and Doddapaneni, Sumanth and Raman, Abhigyan and others},
+  booktitle={AAAI},
+  year={2022}
+}
+
+% --- Montreal Forced Aligner (cited in future-work) ---
+@inproceedings{mcauliffe2017mfa,
+  title={{Montreal Forced Aligner}: Trainable Text-Speech Alignment Using {Kaldi}},
+  author={McAuliffe, Michael and Socolof, Michaela and Mihuc, Sarah and Wagner, Michael and Sonderegger, Morgan},
+  booktitle={Interspeech},
+  year={2017},
+  doi={10.21437/Interspeech.2017-1386}
+}
+
+% --- VoiceMOS Challenge — MOS-prediction context ---
+@inproceedings{huang2022voicemos,
+  title={The {VoiceMOS} Challenge 2022},
+  author={Huang, Wen-Chin and Cooper, Erica and Tsao, Yu and Wang, Hsin-Min and Toda, Tomoki and Yamagishi, Junichi},
+  booktitle={Interspeech},
+  year={2022},
+  doi={10.21437/Interspeech.2022-970}
+}
+
+% --- nPVI / rhythmic class typology ---
+@article{grabe2002durational,
+  title={Durational variability in speech and the rhythm class hypothesis},
+  author={Grabe, Esther and Low, Ee Ling},
+  journal={Papers in Laboratory Phonology 7},
+  pages={515--546},
+  year={2002}
+}
+
+% --- Retroflex acoustic phonetics foundation ---
+@book{ladefoged1996sounds,
+  title={The Sounds of the World's Languages},
+  author={Ladefoged, Peter and Maddieson, Ian},
+  publisher={Blackwell},
+  year={1996}
+}
