@@ -13,8 +13,14 @@
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage{hyperref}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% Use XeLaTeX/LuaLaTeX so Telugu/Tamil/Hindi script in prose renders natively.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}
+\fi
 \usepackage{newunicodechar}
 % IAST retroflex diacritics + Tamil/IPA chars used in prose
 \newunicodechar{ṭ}{\d{t}}
@@ -34,7 +40,7 @@
 \title{\psp: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech}
 
 \author{
-  \IEEEauthorblockN{Pushpak Teja}
+  \IEEEauthorblockN{Venkata Pushpak Teja Menta}
   \IEEEauthorblockA{Praxel HQ\\
   \texttt{pushpak@praxel.in}\\
   ORCID: \href{https://orcid.org/0009-0003-2479-9208}{0009-0003-2479-9208}}
