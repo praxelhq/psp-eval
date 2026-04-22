@@ -90,9 +90,12 @@ This paper makes the case that accent, for Indic languages, is \emph{measurable}
 
 \textbf{Formal definition.} For a TTS system $S$ and a language $\ell$, let $\mathcal{D} = \{D_1, \dots, D_k\}$ be a set of phonological \emph{dimensions}, each $D_i$ parameterised by (i) a set of \emph{native phonemes} $P_i^{\text{nat}}$, (ii) a \emph{substitute phoneme} set $P_i^{\text{sub}}$ that non-native speakers produce instead, and (iii) an acoustic embedding $\varphi: \text{audio} \to \mathbb{R}^d$. The \emph{fidelity} of $S$ on dimension $D_i$ is
 \begin{equation}
-\text{PSP}_i(S) = \mathbb{E}_{x \sim S, p \in x \cap P_i^{\text{nat}}}
+\resizebox{0.92\columnwidth}{!}{$
+\displaystyle
+\text{PSP}_i(S) = \mathbb{E}_{x \sim S,\, p \in x \cap P_i^{\text{nat}}}
   \frac{\mathrm{sim}(\varphi(\tilde{x}_p), \mu_i^{\text{nat}})}
        {\mathrm{sim}(\varphi(\tilde{x}_p), \mu_i^{\text{nat}}) + \mathrm{sim}(\varphi(\tilde{x}_p), \mu_i^{\text{sub}})}
+$}
 \end{equation}
 where $\tilde{x}_p$ is the time span of phoneme $p$ in generated utterance $x$ (via forced alignment), $\mu_i^{\text{nat}}$ and $\mu_i^{\text{sub}}$ are native-speaker and substitute-speaker centroids for $D_i$, and $\mathrm{sim}$ is rectified cosine similarity.
 
@@ -230,6 +233,7 @@ Cartesia  & 267.4 & 404.3 & $+$51\% \\
 \caption{\emph{Preliminary} retroflex fidelity ($\psp$-RR) and collapse rate on the Telugu pilot set. Lower collapse rate is better. Praxy R5 and R6 each use a single voice ($n = 10$ wavs, 15 retroflex tokens) vs commercial systems' two voices ($n = 20$ wavs, 27--30 tokens); sample-size asymmetry noted. Native reference is the theoretical ceiling; Signal 5 in \S\ref{sec:calibration} establishes the empirical noise floor (0.54 on native Telugu).}
 \label{tab:rr_preliminary}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 System & Retroflex Fidelity $\uparrow$ & Collapse Rate $\downarrow$ & $n_{\text{tokens}}$ \\
@@ -246,7 +250,7 @@ Cartesia Sonic-3   & 0.804 & 0.500 & 30 \\
 Native reference (theoretical)   & 1.000 & 0.000 & --- \\
 Native reference (empirical, n=221) & 0.538 & 0.430 & 221 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{table}[t]
@@ -254,6 +258,7 @@ Native reference (empirical, n=221) & 0.538 & 0.430 & 221 \\
 \caption{\emph{Preliminary} Telugu FAD, PSD, and ASR metrics across all systems. FAD computed against 1000 native utterances, PSD against 498. LLM-WER / LLM-CER / intent-preservation from a Qwen-2.5-72B semantic judge over \texttt{vasista22/whisper-telugu-large-v2} transcripts (same STT for all systems, apples-to-apples). $n_{\text{wavs}}$ = 20 for commercial (two voice genders), 10 for each Praxy row (single voice). \praxy{} R6 + reference rows use Chatterbox's built-in zero-shot voice-prompt path: a 8--9\,s Telugu clip from a commercial system is supplied as the speaker prompt, with \praxy{} R6's LoRA-adapted token conditioning unchanged (exaggeration 0.7, temperature 0.6, min\_p 0.1; see §\ref{sec:impl}).}
 \label{tab:te_preliminary}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}
 \toprule
 System & FAD $\downarrow$ & PSD $\downarrow$ & LLM-WER $\downarrow$ & Intent $\uparrow$ \\
@@ -269,7 +274,7 @@ Cartesia Sonic-3 & 458.1 & 33.8 & 0.029 & 0.90 \\
 \midrule
 Native (noise floor, $n = 50$) & 34.8 & 5.0 & --- & --- \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \paragraph{Key observation (Telugu).} Commercial systems that lead on WER and CER (ElevenLabs, Cartesia, Sarvam --- all sub-5\% LLM-WER on Telugu) do \emph{not} uniformly lead on retroflex fidelity. Parler-TTS and Sarvam tie for lowest collapse rate (33\%), while Cartesia has the highest (50\%). Table~\ref{tab:te_preliminary} shows each metric produces a different ordering of the six systems: Sarvam leads FAD; Parler leads PSD (by a hair over Sarvam); Sarvam and Cartesia tie for LLM-WER leader; \praxy{} R6 leads intent-preservation at 100\%. \emph{No single system is the Telugu winner across all of FAD, PSD, WER, and retroflex fidelity simultaneously.} This empirically confirms the paper's central claim: accent is a phonological quality dimension orthogonal to intelligibility, and WER alone systematically understates accent gaps in Indic TTS.
@@ -279,6 +284,7 @@ Native (noise floor, $n = 50$) & 34.8 & 5.0 & --- & --- \\
 \caption{\emph{Preliminary} \psp{} on Hindi pilot set ($n = 20$ wavs per system; 22 retroflex and 18 aspirated tokens in aggregate per system). All four systems are near-native on both dimensions.}
 \label{tab:hindi_preliminary}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcc}
 \toprule
 System & RR Collapse Rate $\downarrow$ & AF Collapse Rate $\downarrow$ \\
@@ -290,7 +296,7 @@ Sarvam Bulbul    & 0.000 & 0.000 \\
 \midrule
 Native reference & 0.000 & 0.000 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \paragraph{Key observation (Hindi vs Telugu).} The same four commercial systems that collapse 33--50\% of Telugu retroflex tokens collapse \emph{0--4.5\%} of Hindi retroflex tokens. Hindi TTS is essentially native-quality on the phonological dimensions PSP measures; Telugu TTS is not. This contrast is direct evidence that PSP's ranking tracks real perceptual quality (Hindi TTS \emph{does} sound near-native to Hindi speakers) and that PSP, unlike WER, surfaces the per-language accent gap.
@@ -300,6 +306,7 @@ Native reference & 0.000 & 0.000 \\
 \caption{\emph{Preliminary} Fr\'echet Audio Distance on the Hindi pilot set ($n = 20$ wavs per system, $n_{\text{ref}} = 1000$ native utterances). Lower is closer to native distribution.}
 \label{tab:hindi_fad}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 System & FAD $\downarrow$ & $\lVert \mu_g - \mu_n \rVert$ & tr-term \\
@@ -309,7 +316,7 @@ ElevenLabs v3    & 227.5 & 11.47 & 95.9 \\
 Indic Parler-TTS & 248.4 & 11.75 & 110.4 \\
 Cartesia Sonic-3 & 267.4 & 12.23 & 117.8 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \paragraph{Key observation (FAD ordering $\neq$ WER ordering).} On Hindi, ElevenLabs leads WER (0.006) but places second on FAD; Cartesia places second on WER (0.025) but \emph{last} on FAD (267.4). Sarvam, which holds the smallest distributional gap to the native corpus (FAD 211.8), is third on WER. This dissociation between intelligibility (WER) and distributional native-ness (FAD) supports PSP's core premise: accent is orthogonal to intelligibility.
@@ -319,6 +326,7 @@ Cartesia Sonic-3 & 267.4 & 12.23 & 117.8 \\
 \caption{\emph{Preliminary} \psp{} benchmark on Tamil pilot set ($n = 19$--$20$ wavs per system for commercial and Parler; $n = 10$ for \praxy{} R6 + ref). Tamil shows the most severe degradation of all three languages in our study. ZF = Tamil-zha fidelity; LF = length fidelity; FAD, PSD = corpus-level distributional metrics (lower $\downarrow$ is better). \praxy{} R6 + Sarvam-Ta-ref uses the same voice-prompt recovery methodology as Telugu (§\ref{sec:results}): an 11\,s Sarvam Bulbul Tamil male reference supplied to Chatterbox's zero-shot voice-prompt interface, plus sampling overrides exaggeration 0.7, temperature 0.6, min\_p 0.1.}
 \label{tab:tamil_preliminary}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccccc}
 \toprule
 System & RR$\downarrow$ & ZF$\downarrow$ & LF$\uparrow$ & FAD$\downarrow$ & PSD$\downarrow$ \\
@@ -329,7 +337,7 @@ Cartesia Sonic-3 & 69.2\% & 85.7\% & 0.29 & 404.3 & 181.0 \\
 \textbf{Parler-TTS (Indic)} & \textbf{64.3\%} & \textbf{61.5\%} & \textbf{0.30} & 233.1 & \textbf{27.1} \\
 \praxy{} R6 + Sarvam-Ta-ref (ours) & 69.2\% & 71.4\% & 0.10 & 276.0 & 71.2 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \paragraph{Key observation (different metrics, different winners).} On Tamil, Parler-TTS — the only open-source-only system in our Tamil comparison — wins four of five PSP dimensions (RR, ZF, LF, PSD), while Sarvam wins FAD. No single system dominates every phonological sub-dimension. This supports PSP's thesis that accent is not a single scalar: per-dimension decomposition is essential for characterising Indic TTS failure modes.
