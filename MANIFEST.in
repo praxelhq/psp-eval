@@ -1,0 +1,16 @@
+include LICENSE
+include README.md
+include ANNOUNCEMENT.md
+include pyproject.toml
+recursive-include psp_eval *.py
+recursive-include evaluation *.py *.json
+recursive-include praxy *.py
+# Do NOT ship the paper, centroid tensors, or benchmark JSON inside the wheel;
+# these live in the GitHub repo and Hugging Face datasets. The sdist is for
+# reproducibility only and will exclude them via prune directives below.
+prune paper
+prune huggingface
+prune .github
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude .DS_Store
