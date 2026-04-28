@@ -88,7 +88,7 @@ Happy to share the draft ahead of v2 upload if helpful.
 
 Best,
 Pushpak Teja
-Praxel HQ · [pushpak@praxel.in](mailto:pushpak@praxel.in)
+Praxel Ventures · [pushpak@praxel.in](mailto:pushpak@praxel.in)
 
 ---
 
