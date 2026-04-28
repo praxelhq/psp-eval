@@ -118,7 +118,7 @@ Per language, we sample $N{=}500$ native clips from IndicTTS (Telugu, Tamil) and
 Given (audio, text, language), we run \texttt{forced\_align}~\cite{torchaudio} over the CTC emission against the grapheme sequence, extract layer-9 XLS-R embeddings for each expected-retroflex span, and compute per-position fidelity. Utterance-level \psp{}-RR is the mean over positions. Corpus-level is the mean over utterances weighted by expected retroflex count.
 
 \subsection{Released artifacts}
-Code is open-source MIT at \url{github.com/praxelhq/praxy-tts} (\texttt{evaluation/psp.py}, \texttt{evaluation/psp\_bootstrap.py}, \texttt{evaluation/modal\_psp.py}). Centroids are CC-BY. A submission pipeline and leaderboard run at \url{praxel.in/psp-leaderboard}.
+Code is open-source MIT at \url{github.com/praxelhq/praxy} (\texttt{evaluation/psp.py}, \texttt{evaluation/psp\_bootstrap.py}, \texttt{evaluation/modal\_psp.py}). Centroids are CC-BY. A submission pipeline and leaderboard run at \url{praxel.in/psp-leaderboard}.
 
 \section{Calibration}
 \label{sec:calibration}
@@ -326,7 +326,7 @@ We use publicly released Indic speech corpora --- IndicTTS~\cite{kumar2022indict
 
 \section*{Ethics and Reproducibility}
 
-\textbf{Reproducibility.} The full \psp{} scoring code, bootstrap script, native centroid pickles, the 300-utterance held-out golden \emph{test-set text files} for Telugu / Hindi / Tamil, and the \texttt{benchmark\_results.json} artefact with all v1 numbers are released at \url{github.com/praxelhq/praxy-tts} under the MIT license. Synthesised audio from commercial TTS providers (ElevenLabs, Cartesia, Sarvam) is not redistributable under their terms of service; users regenerate it under their own accounts using the scripts provided. All v1 experiments are reproducible with a Modal account and the commands in the repository \texttt{README}.
+\textbf{Reproducibility.} The full \psp{} scoring code, bootstrap script, native centroid pickles, the 300-utterance held-out golden \emph{test-set text files} for Telugu / Hindi / Tamil, and the \texttt{benchmark\_results.json} artefact with all v1 numbers are released at \url{github.com/praxelhq/praxy} under the MIT license. Synthesised audio from commercial TTS providers (ElevenLabs, Cartesia, Sarvam) is not redistributable under their terms of service; users regenerate it under their own accounts using the scripts provided. All v1 experiments are reproducible with a Modal account and the commands in the repository \texttt{README}.
 
 \textbf{Ethics.} \psp{} measures how close a synthesised audio sample is to a native-speaker reference corpus in specific phonological dimensions. ``Native-like'' is not a value judgement: non-native accents are not inferior, only different, and L2 speech is a legitimate and widely-preferred variety in many contexts. \psp{} is intended as an engineering tool for TTS system developers optimising for native-listener intelligibility and naturalness, not as a prescriptive judgement on human speech. All reference-corpus speakers consented to their speech being used in research, per the originating corpus licenses (IndicTTS, Rasa, FLEURS).
 
