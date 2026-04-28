@@ -10,7 +10,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-  { name = "Pushpak Teja", email = "pushpak@praxel.in" },
+  { name = "Venkata Pushpak Teja Menta", email = "pushpak@praxel.in" },
+]
+maintainers = [
+  { name = "Venkata Pushpak Teja Menta", email = "pushpak@praxel.in" },
 ]
 keywords = [
   "text-to-speech", "accent-evaluation", "indic", "retroflex",
@@ -20,12 +23,18 @@ classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
   "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: MacOS",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
   "Topic :: Multimedia :: Sound/Audio :: Analysis",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Natural Language :: Hindi",
+  "Natural Language :: Tamil",
+  "Natural Language :: Telugu",
 ]
 dependencies = [
   "numpy<2",
@@ -46,9 +55,10 @@ dev = ["pytest>=7", "ruff>=0.1"]
 
 [project.urls]
 Homepage = "https://github.com/praxelhq/psp-eval"
-Paper = "https://arxiv.org/abs/TBD"
+Documentation = "https://github.com/praxelhq/psp-eval#readme"
 Source = "https://github.com/praxelhq/psp-eval"
 "Bug Tracker" = "https://github.com/praxelhq/psp-eval/issues"
+Paper = "https://github.com/praxelhq/psp-eval/blob/main/paper/psp.pdf"
 Centroids = "https://huggingface.co/datasets/Praxel/psp-native-centroids"
 
 [project.scripts]
