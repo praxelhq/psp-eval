@@ -1,6 +1,6 @@
 {
-  "version": "v1-preliminary-2026-04-21",
-  "notes": "PSP v1 benchmark smoke sets. Caveats: 10-utt smoke only; per-phoneme probes have noise floor (see native_sanity); FAD/PSD are unnormalised Fr\u00e9chet; nPVI uses librosa onset_detect.",
+  "version": "v1.4-hi-vanilla-2026-04-22",
+  "notes": "PSP v1 benchmark smoke sets. Caveats: 10-utt smoke only; per-phoneme probes have noise floor (see native_sanity); FAD/PSD are unnormalised Fréchet; nPVI uses librosa onset_detect. | R6 row added 2026-04-22 using step_8000.ckpt, IndicWhisper STT. | Config B rows added 2026-04-22: R6 + commercial-Te reference + (exag=0.7, temp=0.6, min_p=0.1). | Tamil Praxy row added 2026-04-22 (R6 + 11s Sarvam-Ta-ref + Config B). | Hindi Praxy row added 2026-04-22: vanilla Chatterbox + Cartesia-Hi-ref + Config B matches Cartesia on WER (0.025).",
   "benchmarks": {
     "Hindi": [
       {
@@ -116,6 +116,43 @@
           "embedding_dim": 1024
         },
         "psd": null
+      },
+      {
+        "system": "Praxy (vanilla Chatterbox + Cart-Hi-ref + Config B)",
+        "run_id": "chatterbox_vanilla_cartB_hi_hindi_smoke_1776873348",
+        "notes": "Vanilla ChatterboxMultilingualTTS (NO LoRA, NO BUPS) + 6s Cartesia Hi female ref + exag=0.7 temp=0.6 min_p=0.1. Routing decision: R6 LoRA hurts Hindi; vanilla + BYOR + Config B matches commercial.",
+        "psp": {
+          "n_utts": 10,
+          "rr_n_expected": 11,
+          "rr_n_collapsed": 0,
+          "rr_collapse_rate": 0.0,
+          "af_n_expected": 9,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": 0.0,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 439.3,
+          "n_gen": 10,
+          "n_ref": 1000,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 122.1,
+          "n_gen": 10,
+          "n_ref": 497,
+          "embedding_dim": 5,
+          "dim": 5
+        },
+        "asr": {
+          "llm_wer": 0.025,
+          "intent_preservation_rate": 1.0,
+          "n_utterances": 10,
+          "stt_model": "vasista22/whisper-hindi-large-v2"
+        }
       }
     ],
     "Telugu": [
@@ -298,6 +335,132 @@
           "n_ref_dropped": 0,
           "dim": 5
         }
+      },
+      {
+        "system": "Praxy R6",
+        "run_id": "praxy_r6_s8000_telugu_smoke_1776823434",
+        "notes": "Full 1.88k-h mix, step_8000, BUPS + Hindi-proxy; same IndicWhisper STT for apples-to-apples",
+        "psp": {
+          "n_utts": 10,
+          "rr_n_expected": 15,
+          "rr_n_collapsed": 6,
+          "rr_collapse_rate": 0.4,
+          "rr_fidelity_mean": 0.7864,
+          "af_n_expected": 2,
+          "af_n_collapsed": 2,
+          "af_collapse_rate": 1.0,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": 0.0683
+        },
+        "fad": {
+          "fad": 354.96589168197556,
+          "n_gen": 10,
+          "n_ref": 1000,
+          "mean_norm": 12.243975441948292,
+          "trace_term": 205.05095705894269,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 61.72102394418369,
+          "n_gen": 10,
+          "n_ref": 498,
+          "mean_norm": 5.622120650254357,
+          "trace_term": 30.11278333816722,
+          "embedding_dim": 5,
+          "n_gen_dropped": 0,
+          "n_ref_dropped": 0,
+          "dim": 5
+        },
+        "asr": {
+          "literal_wer": 0.195,
+          "llm_wer": 0.034,
+          "llm_cer": 0.025,
+          "intent_preservation_rate": 1.0,
+          "n_utterances": 10,
+          "stt_model": "vasista22/whisper-telugu-large-v2"
+        }
+      },
+      {
+        "system": "Praxy R6 + Cartesia-ref + Config B",
+        "run_id": "praxy_r6_cartB_telugu_smoke_1776825989",
+        "notes": "R6 step_8000, Cartesia Te male 8s reference, exag=0.7, temp=0.6, min_p=0.1",
+        "psp": {
+          "n_utts": 10,
+          "rr_n_expected": 15,
+          "rr_n_collapsed": 5,
+          "rr_collapse_rate": 0.333,
+          "rr_fidelity_mean": 0.835,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 394.5,
+          "n_gen": 10,
+          "n_ref": 1000,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 26.5,
+          "n_gen": 10,
+          "n_ref": 498,
+          "embedding_dim": 5,
+          "dim": 5
+        },
+        "asr": {
+          "literal_wer": 0.223,
+          "llm_wer": 0.034,
+          "llm_cer": 0.034,
+          "intent_preservation_rate": 0.9,
+          "n_utterances": 10,
+          "stt_model": "vasista22/whisper-telugu-large-v2"
+        }
+      },
+      {
+        "system": "Praxy R6 + Sarvam-ref + Config B",
+        "run_id": "praxy_r6_sarvB_telugu_smoke_1776826467",
+        "notes": "R6 step_8000, Sarvam Te female 9s reference, exag=0.7, temp=0.6, min_p=0.1. Headline BYOR config.",
+        "psp": {
+          "n_utts": 10,
+          "rr_n_expected": 15,
+          "rr_n_collapsed": 4,
+          "rr_collapse_rate": 0.267,
+          "rr_fidelity_mean": 0.842,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 0,
+          "zf_n_collapsed": 0,
+          "zf_collapse_rate": null,
+          "lf_mean": null
+        },
+        "fad": {
+          "fad": 291.3,
+          "n_gen": 10,
+          "n_ref": 1000,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 13.1,
+          "n_gen": 10,
+          "n_ref": 498,
+          "embedding_dim": 5,
+          "dim": 5
+        },
+        "asr": {
+          "literal_wer": 0.185,
+          "llm_wer": 0.033,
+          "llm_cer": 0.021,
+          "intent_preservation_rate": 0.9,
+          "n_utterances": 10,
+          "stt_model": "vasista22/whisper-telugu-large-v2"
+        }
       }
     ],
     "Tamil": [
@@ -443,6 +606,44 @@
           "n_gen_dropped": 0,
           "n_ref_dropped": 0,
           "dim": 5
+        }
+      },
+      {
+        "system": "Praxy R6 + Sarvam-Ta-ref + Config B",
+        "run_id": "praxy_r6_sarvB_ta_tamil_smoke_1776868952",
+        "notes": "R6 step_8000, 11s Sarvam Bulbul Ta male ref, BUPS on, exag=0.7 temp=0.6 min_p=0.1",
+        "psp": {
+          "n_utts": 10,
+          "rr_n_expected": 39,
+          "rr_n_collapsed": 27,
+          "rr_collapse_rate": 0.692,
+          "rr_fidelity_mean": 0.527,
+          "af_n_expected": 0,
+          "af_n_collapsed": 0,
+          "af_collapse_rate": null,
+          "zf_n_expected": 7,
+          "zf_n_collapsed": 5,
+          "zf_collapse_rate": 0.714,
+          "lf_mean": 0.1
+        },
+        "fad": {
+          "fad": 276.0,
+          "n_gen": 10,
+          "n_ref": 1000,
+          "embedding_dim": 1024
+        },
+        "psd": {
+          "psd": 71.2,
+          "n_gen": 10,
+          "n_ref": 500,
+          "embedding_dim": 5,
+          "dim": 5
+        },
+        "asr": {
+          "llm_wer": 0.041,
+          "intent_preservation_rate": 0.9,
+          "n_utterances": 10,
+          "stt_model": "vasista22/whisper-tamil-large-v2"
         }
       }
     ]

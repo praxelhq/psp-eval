@@ -10,10 +10,10 @@ brew install --cask mactex-no-gui
 Run **four commands in order**. Citations need two latex passes after bibtex:
 ```bash
 cd paper/psp/
-pdflatex psp
+xelatex psp
 bibtex psp
-pdflatex psp
-pdflatex psp
+xelatex psp
+xelatex psp
 ```
 
 You'll get `psp.pdf` in the same directory.
