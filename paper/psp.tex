@@ -29,12 +29,23 @@
   % "Noto Sans Tamil", "Noto Sans Devanagari".
   % Manual font switch for Indic prose — explicit \textte / \textta /
   % \texthi wrappers for inline Indic strings.
-  \newfontfamily\telugufont{Telugu Sangam MN}
-  \newfontfamily\tamilfont{Tamil Sangam MN}
-  \newfontfamily\devanagarifont{Devanagari Sangam MN}
-  \newcommand{\textte}[1]{{\telugufont #1}}
-  \newcommand{\textta}[1]{{\tamilfont #1}}
-  \newcommand{\texthi}[1]{{\devanagarifont #1}}
+  % Prefer embedded Noto TTFs (shipped in arXiv tarball under fonts/), then
+  % system Noto, then macOS Sangam MN, then identity fallback.
+  \newif\iftelugufontok\telugufontokfalse
+  \newif\iftamilfontok\tamilfontokfalse
+  \newif\ifdevafontok\devafontokfalse
+  \IfFontExistsTF{fonts/NotoSansTelugu-Regular.ttf}{\newfontfamily\telugufont{NotoSansTelugu-Regular.ttf}[Path=fonts/]\telugufontoktrue}{%
+    \IfFontExistsTF{Noto Sans Telugu}{\newfontfamily\telugufont{Noto Sans Telugu}\telugufontoktrue}{%
+      \IfFontExistsTF{Telugu Sangam MN}{\newfontfamily\telugufont{Telugu Sangam MN}\telugufontoktrue}{}}}
+  \IfFontExistsTF{fonts/NotoSansTamil-Regular.ttf}{\newfontfamily\tamilfont{NotoSansTamil-Regular.ttf}[Path=fonts/]\tamilfontoktrue}{%
+    \IfFontExistsTF{Noto Sans Tamil}{\newfontfamily\tamilfont{Noto Sans Tamil}\tamilfontoktrue}{%
+      \IfFontExistsTF{Tamil Sangam MN}{\newfontfamily\tamilfont{Tamil Sangam MN}\tamilfontoktrue}{}}}
+  \IfFontExistsTF{fonts/NotoSansDevanagari-Regular.ttf}{\newfontfamily\devanagarifont{NotoSansDevanagari-Regular.ttf}[Path=fonts/]\devafontoktrue}{%
+    \IfFontExistsTF{Noto Sans Devanagari}{\newfontfamily\devanagarifont{Noto Sans Devanagari}\devafontoktrue}{%
+      \IfFontExistsTF{Devanagari Sangam MN}{\newfontfamily\devanagarifont{Devanagari Sangam MN}\devafontoktrue}{}}}
+  \newcommand{\textte}[1]{\iftelugufontok{\telugufont #1}\else#1\fi}
+  \newcommand{\textta}[1]{\iftamilfontok{\tamilfont #1}\else#1\fi}
+  \newcommand{\texthi}[1]{\ifdevafontok{\devanagarifont #1}\else#1\fi}
 \fi
 \usepackage{newunicodechar}
 % IAST retroflex diacritics + IPA chars used in prose. Tamil-zha ழ is kept
@@ -57,7 +68,7 @@
 \title{\psp: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech}
 
 \author{
-  \IEEEauthorblockN{Pushpak Teja}
+  \IEEEauthorblockN{Venkata Pushpak Teja Menta}
   \IEEEauthorblockA{Praxel Ventures\\
   \texttt{pushpak@praxel.in}\\
   ORCID: \href{https://orcid.org/0009-0003-2479-9208}{0009-0003-2479-9208}}
@@ -66,7 +77,7 @@
 \maketitle
 
 \begin{abstract}
-Standard text-to-speech (TTS) evaluation measures intelligibility (WER, CER) and overall naturalness (MOS, UTMOS) but does not quantify \emph{accent}. A synthesiser may score well on all four yet sound non-native on features that are phonemic in the target language. For Indic languages, these features include retroflex articulation, aspiration, vowel length, and the Tamil retroflex approximant /\b{r}/ (Tamil letter ழ). We present \psp, the Phoneme Substitution Profile, an interpretable, per-phonological-dimension accent benchmark for Indic TTS. \psp{} decomposes accent into six complementary dimensions (retroflex collapse rate RR, aspiration fidelity AF, vowel-length fidelity LF, Tamil-zha fidelity ZF, Fr\'echet Audio Distance FAD in a phonetic embedding space, and prosodic signature divergence PSD), with the first four measured via forced alignment plus native-speaker-centroid acoustic probes over Wav2Vec2-XLS-R~\cite{babu2021xlsr} layer-9 embeddings, and the latter two computed as corpus-level distributional distances. In this v1 preprint we benchmark four commercial and open-source systems (ElevenLabs v3, Cartesia Sonic-3, Sarvam Bulbul, Indic Parler-TTS) across Hindi, Telugu, and Tamil pilot sets, with a fifth system (our in-progress Praxy Voice R5) additionally included on Telugu. We report three principal findings: (i) retroflex collapse grows monotonically with phonological difficulty Hindi $<$ Telugu $<$ Tamil ($\sim$1\%, $\sim$40\%, $\sim$68\%); (ii) \psp{} ordering diverges from WER ordering, with commercial WER-leaders not uniformly leading on retroflex or prosodic fidelity; (iii) no single system is Pareto-optimal across all six dimensions. We release native reference centroids (500 clips per language), 1000-clip utterance-level embeddings for FAD, 500-clip prosodic feature matrices for PSD, 300-utterance held-out golden sets per language, scoring code under MIT, and centroids under CC-BY. Compared to PSR~\cite{psr2026} --- a contemporary rule-based phonological benchmark for American--British English --- \psp{} is acoustic-probe-based, Indic-specific, and per-dimension decomposed; the two are complementary rather than competing. Formal MOS-correlation calibration is deferred to v2; this v1 reports five internal-consistency signals supporting metric validity, including a native-audio sanity check that establishes a language-specific noise floor for per-phoneme probes.
+Standard text-to-speech (TTS) evaluation measures intelligibility (WER, CER) and overall naturalness (MOS, UTMOS) but does not quantify \emph{accent}. A synthesiser may score well on all four yet sound non-native on features that are phonemic in the target language. For Indic languages, these features include retroflex articulation, aspiration, vowel length, and the Tamil retroflex approximant /\b{r}/ (Tamil letter ழ). We present \psp, the Phoneme Substitution Profile, an interpretable, per-phonological-dimension accent benchmark for Indic TTS. \psp{} decomposes accent into six complementary dimensions (retroflex collapse rate RR, aspiration fidelity AF, vowel-length fidelity LF, Tamil-zha fidelity ZF, Fr\'echet Audio Distance FAD in a phonetic embedding space, and prosodic signature divergence PSD), with the first four measured via forced alignment plus native-speaker-centroid acoustic probes over Wav2Vec2-XLS-R~\cite{babu2021xlsr} layer-9 embeddings, and the latter two computed as corpus-level distributional distances. In this v1 preprint we benchmark four commercial and open-source systems (ElevenLabs v3, Cartesia Sonic-3, Sarvam Bulbul, Indic Parler-TTS) across Hindi, Telugu, and Tamil pilot sets, with a fifth system (our in-progress Praxy Voice, R6 LoRA on Te/Ta plus vanilla Chatterbox on Hi) additionally included on all three languages, including an R5$\to$R6 training-scale case study on Telugu. We report three principal findings: (i) retroflex collapse grows monotonically with phonological difficulty Hindi $<$ Telugu $<$ Tamil ($\sim$1\%, $\sim$40\%, $\sim$68\%); (ii) \psp{} ordering diverges from WER ordering, with commercial WER-leaders not uniformly leading on retroflex or prosodic fidelity; (iii) no single system is Pareto-optimal across all six dimensions. We release native reference centroids (500 clips per language), 1000-clip utterance-level embeddings for FAD, 500-clip prosodic feature matrices for PSD, 300-utterance held-out golden sets per language, scoring code under MIT, and centroids under CC-BY. Compared to PSR~\cite{psr2026} --- a contemporary rule-based phonological benchmark for American--British English --- \psp{} is acoustic-probe-based, Indic-specific, and per-dimension decomposed; the two are complementary rather than competing. Formal MOS-correlation calibration is deferred to v2; this v1 reports five internal-consistency signals supporting metric validity, including a native-audio sanity check that establishes a language-specific noise floor for per-phoneme probes.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -144,7 +155,7 @@ Per language, we sample $N{=}500$ native clips from IndicTTS (Telugu, Tamil) and
 Given (audio, text, language), we run \texttt{forced\_align}~\cite{torchaudio} over the CTC emission against the grapheme sequence, extract layer-9 XLS-R embeddings for each expected-retroflex span, and compute per-position fidelity. Utterance-level \psp{}-RR is the mean over positions. Corpus-level is the mean over utterances weighted by expected retroflex count.
 
 \subsection{Released artifacts}
-Code is open-source MIT at \url{github.com/praxelhq/praxy} (\texttt{evaluation/psp.py}, \texttt{evaluation/psp\_bootstrap.py}, \texttt{evaluation/modal\_psp.py}). Centroids are CC-BY. A submission pipeline and leaderboard run at \url{praxel.in/psp-leaderboard}.
+Code is open-source MIT at \url{github.com/praxelhq/psp-eval} (\texttt{psp\_eval/psp.py}, \texttt{psp\_eval/bootstrap.py}, \texttt{psp\_eval/modal\_psp.py}). Centroids are CC-BY. A public leaderboard is forthcoming.
 
 \section{Calibration}
 \label{sec:calibration}
@@ -390,7 +401,7 @@ We use publicly released Indic speech corpora --- IndicTTS~\cite{kumar2022indict
 
 \section*{Ethics and Reproducibility}
 
-\textbf{Reproducibility.} The full \psp{} scoring code, bootstrap script, native centroid pickles, the 300-utterance held-out golden \emph{test-set text files} for Telugu / Hindi / Tamil, and the \texttt{benchmark\_results.json} artefact with all v1 numbers are released at \url{github.com/praxelhq/praxy} under the MIT license. Synthesised audio from commercial TTS providers (ElevenLabs, Cartesia, Sarvam) is not redistributable under their terms of service; users regenerate it under their own accounts using the scripts provided. All v1 experiments are reproducible with a Modal account and the commands in the repository \texttt{README}.
+\textbf{Reproducibility.} The full \psp{} scoring code, bootstrap script, native centroid pickles, the 300-utterance held-out golden \emph{test-set text files} for Telugu / Hindi / Tamil, and the \texttt{benchmark\_results.json} artefact with all v1 numbers are released at \url{github.com/praxelhq/psp-eval} under the MIT license. Synthesised audio from commercial TTS providers (ElevenLabs, Cartesia, Sarvam) is not redistributable under their terms of service; users regenerate it under their own accounts using the scripts provided. All v1 experiments are reproducible with a Modal account and the commands in the repository \texttt{README}.
 
 \textbf{Ethics.} \psp{} measures how close a synthesised audio sample is to a native-speaker reference corpus in specific phonological dimensions. ``Native-like'' is not a value judgement: non-native accents are not inferior, only different, and L2 speech is a legitimate and widely-preferred variety in many contexts. \psp{} is intended as an engineering tool for TTS system developers optimising for native-listener intelligibility and naturalness, not as a prescriptive judgement on human speech. All reference-corpus speakers consented to their speech being used in research, per the originating corpus licenses (IndicTTS, Rasa, FLEURS).
 

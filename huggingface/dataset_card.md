@@ -23,8 +23,8 @@ size_categories:
 
 Native-speaker reference artefacts for the **PSP** (Phoneme Substitution Profile)
 benchmark for Indic text-to-speech accent evaluation. Companion to the paper
-[PSP: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech](https://arxiv.org/abs/TBD)
-(Teja, 2026).
+[PSP: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech](https://arxiv.org/abs/2604.25476)
+(Menta, 2026).
 
 This dataset is a **scoring reference**, not a training corpus. It contains
 pre-computed acoustic references extracted from publicly-licensed native-speaker
@@ -97,11 +97,12 @@ with open(path, "rb") as f:
 ```bibtex
 @misc{teja2026psp,
   title={{PSP}: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech},
-  author={Teja, Pushpak},
+  author={Menta, Venkata Pushpak Teja},
   year={2026},
-  eprint={TBD},
+  eprint={2604.25476},
   archivePrefix={arXiv},
-  primaryClass={cs.CL}
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2604.25476}
 }
 ```
 
@@ -113,7 +114,7 @@ CC-BY-4.0 — matching the originating corpus licenses (IndicTTS, Rasa).
 
 - **Code**: https://github.com/praxelhq/psp-eval (MIT)
 - **PyPI**: `pip install psp-eval`
-- **Paper**: https://arxiv.org/abs/TBD
+- **Paper**: https://arxiv.org/abs/2604.25476
 
 ## Contact
 

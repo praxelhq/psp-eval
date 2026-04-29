@@ -2,7 +2,7 @@
 
 Reference implementation and benchmark for **PSP: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech** (Teja, 2026).
 
-[![Paper](https://img.shields.io/badge/paper-arXiv-b31b1b.svg)](https://arxiv.org/abs/TBD)
+[![Paper](https://img.shields.io/badge/paper-arXiv:2604.25476-b31b1b.svg)](https://arxiv.org/abs/2604.25476)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Centroids: CC-BY](https://img.shields.io/badge/centroids-CC--BY--4.0-green.svg)](https://huggingface.co/datasets/Praxel/psp-native-centroids)
 
@@ -134,11 +134,12 @@ If you use PSP in your research, please cite:
 ```bibtex
 @misc{teja2026psp,
   title={{PSP}: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech},
-  author={Teja, Pushpak},
+  author={Menta, Venkata Pushpak Teja},
   year={2026},
-  eprint={TBD},
+  eprint={2604.25476},
   archivePrefix={arXiv},
-  primaryClass={cs.CL}
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2604.25476}
 }
 ```
 
