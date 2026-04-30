@@ -56,7 +56,7 @@ Three findings from v1:
 2. **PSP ordering ≠ WER ordering**. ElevenLabs leads WER on Hindi but places second on FAD; Cartesia places last on FAD despite strong WER.
 3. **No single system is Pareto-optimal** across all six dimensions. Per-dimension decomposition reveals system-specific failure modes.
 
-Everything open-source: code (MIT), centroids (CC-BY-4.0), 300-utt golden test sets, reproducibility artefact. `pip install psp-eval` for the benchmark tool.
+Everything open-source: code (MIT), centroids (CC-BY-4.0), 300-utt golden test sets, reproducibility artefact. Install from source with `pip install git+https://github.com/praxelhq/psp-eval.git` (PyPI publish planned post-paper-acceptance).
 
 v2 with formal MOS correlation + 300-utt full benchmarks planned for June 2026.
 

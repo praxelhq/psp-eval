@@ -28,7 +28,7 @@ benchmark for Indic text-to-speech accent evaluation. Companion to the paper
 
 This dataset is a **scoring reference**, not a training corpus. It contains
 pre-computed acoustic references extracted from publicly-licensed native-speaker
-speech corpora, used by the [`psp-eval` PyPI package](https://github.com/praxelhq/psp-eval)
+speech corpora, used by the [`psp-eval` package](https://github.com/praxelhq/psp-eval)
 to score TTS outputs on six accent dimensions.
 
 ## Contents
@@ -113,7 +113,7 @@ CC-BY-4.0 — matching the originating corpus licenses (IndicTTS, Rasa).
 ## Related
 
 - **Code**: https://github.com/praxelhq/psp-eval (MIT)
-- **PyPI**: `pip install psp-eval`
+- **Install** (from source): `pip install git+https://github.com/praxelhq/psp-eval.git` (PyPI publish planned post-paper-acceptance)
 - **Paper**: https://arxiv.org/abs/2604.25476
 
 ## Contact

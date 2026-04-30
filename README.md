@@ -22,7 +22,8 @@ PSP (Phoneme Substitution Profile) decomposes accent into six interpretable dime
 ## Quick start
 
 ```bash
-pip install psp-eval
+# Install from source (PyPI publish planned post-paper-acceptance)
+pip install git+https://github.com/praxelhq/psp-eval.git
 ```
 
 ```python
@@ -96,14 +97,14 @@ psp-eval/
 
 ## Running local backend
 
-The PyPI package's `backend="local"` runs the probe on your machine. First time it downloads centroids from Hugging Face (`Praxel/psp-native-centroids`, ~400 MB per language) to `~/.cache/psp_eval/`.
+The package's `backend="local"` runs the probe on your machine. First time it downloads centroids from Hugging Face (`Praxel/psp-native-centroids`, ~400 MB per language) to `~/.cache/psp_eval/`.
 
 CPU works but is slow (~5-10s per clip for per-phoneme probes). GPU (CUDA or MPS) recommended for directory-scale runs.
 
 ## Running Modal backend (recommended for large runs)
 
 ```bash
-pip install psp-eval[modal]
+pip install "psp-eval[modal] @ git+https://github.com/praxelhq/psp-eval.git"
 modal setup  # one-time auth
 ```
 

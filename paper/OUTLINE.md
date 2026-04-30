@@ -72,7 +72,7 @@ Expected reading: existing open-source systems have RR-Te ≈ 0.3-0.5 (significa
 - **Code**: `evaluation/psp.py` + `evaluation/psp_bootstrap.py` in github.com/praxelhq/praxy-tts under MIT.
 - **Centroids**: HF dataset `Praxel/psp-native-centroids` under CC-BY.
 - **Leaderboard**: `praxel.in/psp-leaderboard` with submission pipeline.
-- **PyPI**: `pip install psp-eval`.
+- **Install**: `pip install git+https://github.com/praxelhq/psp-eval.git` (PyPI publish planned post-paper-acceptance).
 
 ## Limitations
 
