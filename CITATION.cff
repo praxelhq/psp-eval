@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "PSP: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech"
+message: "If you use this software, please cite the accompanying paper."
+type: software
+authors:
+  - family-names: Menta
+    given-names: Venkata Pushpak Teja
+    orcid: "https://orcid.org/0009-0003-2479-9208"
+    affiliation: Praxel Ventures
+    email: pushpak@praxel.in
+repository-code: "https://github.com/praxelhq/psp-eval"
+license: MIT
+preferred-citation:
+  type: article
+  title: "PSP: An Interpretable Per-Dimension Accent Benchmark for Indic Text-to-Speech"
+  authors:
+    - family-names: Menta
+      given-names: Venkata Pushpak Teja
+      orcid: "https://orcid.org/0009-0003-2479-9208"
+  year: 2026
+  url: "https://arxiv.org/abs/2604.25476"
+  identifiers:
+    - type: other
+      value: "arXiv:2604.25476"
